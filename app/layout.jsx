@@ -1,10 +1,11 @@
 import "@styles/globals.css";
 import Nav from "@components/Nav";
 import Provider from "@components/Provider";
-import Footer from "@components/Footer";
+import { ThemeProvider } from "@components/ThemeProvider";
+import ThemeSwitcher from "@components/ThemeSwitcher";
 
 export const metadata = {
-  title: "Promptopia",
+  title: "IdeaSpark",
   description: "Discover & Share AI Prompts",
   icons: {
     icon:
@@ -24,6 +25,7 @@ export const metadata = {
 const RootLayout = ({ children }) => (
   <html lang='en'>
     <body>
+      <ThemeProvider>
       <Provider>
 
         <div className='main'>
@@ -36,7 +38,8 @@ const RootLayout = ({ children }) => (
         </main>
         
       </Provider>
-      <Footer />
+      <ThemeSwitcher/>
+      </ThemeProvider>    
     </body>
   </html>
 );
